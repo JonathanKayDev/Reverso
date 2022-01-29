@@ -8,8 +8,7 @@ function getString() {
     // if input string is valid, then display reversed string 
     if (validateString(userString)) {
         displayString(revString);
-    }
-    
+    }   
 }
 
 

@@ -66,7 +66,6 @@
                                 if (validateString(userString)) {
                                     displayString(revString);
                                 }
-                                
                             }
                             
                             
@@ -110,9 +109,28 @@
                 </div>
                 <!-- Code Description-->
                 <div class="col-lg-4">
-                    <p>The Code is structured in one function.</p>
-                    <h5>Hello World</h5>
-                    <p>Hello World is a function that displays an alert with a message of "Hello World!".</p>
+                    <p>The Code is structured in four functions.</p>
+                    <h5>getString</h5>
+                    <p>getString retrieves the user input string from the page. It utilises <strong>getElementById</strong> to get this string.
+                    A new string is declared, which is set to the output of the <strong>reverseString</strong> method, where the input string is reversed.
+                    A class of <strong>"invisible"</strong> is added to the <strong>alert</strong> div, so that the div is no visible when text is being updated
+                    or if the input is not valid. The input string is validated with the <strong>validateString</strong> function, and if this function returns 
+                    a boolean value of true then the <strong>displayString</strong> function is executed with an input value of the reversed string.</p>
+                    <h5>reverseString</h5>
+                    <p>reverseString returns a string value which is the reverse of the string fed into the function. This is achieved with a 'for' loop which runs 
+                        backwards from the last index of the input array to 0 (last index is the array length -1, since js array indices start from 0).
+                        On each iteration of the loop, the char is added to a new array called <strong>revString</strong>, which is returned after the loop completes.
+                    </p>
+                    <h5>validateString</h5>
+                    <p>The user input string is fed into this function, which checks to see if the string length is equal to 0 or formed entirely of white spaces.
+                        If either of these conditions evaluate to true, then a boolean variable named <strong>output</strong> is set to false, and an alert box notifies the user to 
+                        input a string. The <strong>output</strong> variable is then returned.
+                    </p>
+                    <h5>displayString</h5>
+                    <p>The displayString function accepts a string input, which should be the reversed string, and displays the string to the paragraph of id <strong>msg</strong> 
+                        in the <strong>alert</strong> div. The <strong>alert</strong> div then has the class of <strong>"invisible"</strong> removed so that the output is 
+                        visible to the user.
+                    </p>
                 </div>
             </div>
         </div>
