@@ -36,7 +36,7 @@
                         <a class="nav-link" href="code.html">The Code</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" target="_blank" href="#">Git Repo</a>
+                        <a class="nav-link" target="_blank" href="https://github.com/JonathanKayDev/Reverso">Git Repo</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" target="_blank" href="https://www.jonathankay.dev">About</a>
@@ -47,8 +47,32 @@
     </nav>
     <!-- Main Section-->
     <main class="flex-shrink-0">
-        <div class="container">
-
+        <div class="container mt-5 px-3">
+            <div class="row row-cols-1 row-cols-md-2">
+                <div class="col">
+                    <h1 class="display-6 fw-bold lh-1 mb-3">REVERSO: A Coding Project</h1>
+                    <h4 class="lead mb-4">A javascript coding exercise using arrays. Write a program that displays a string in reverse.</h4>
+                </div>
+                <div class="col">
+                    <h5 class="border-1 border-bottom border-danger">Enter A String To Reverse</h5>
+                    <form class="row gx-3 gy-2">
+                        <div class="col">
+                            <input id="userString" type="text" class="form-control" placeholder="Enter a string for REVERSO" aria-label="Enter a string">
+                        </div>
+                        <div class="col-12">
+                            <button type="button" id="btnSubmit" class="btn btn-danger">Reverse</button>
+                        </div>
+                        <div class="alert alert-danger mt-5 invisible fade show" id="alert" role="alert">
+                            <img src="/img/Reverso_solo.svg" class="d-block mx-auto" width="200px">
+                            <h4 class="alert-heading text-center mt-2">REVERSO Says:</h4>
+                            <hr>
+                            <p class="mb=0 text-center" id="msg">
+                                <!-- Insert Message Here-->
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </main>
     <!-- Footer Section-->
@@ -78,7 +102,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
     <script src="/js/site.js"></script>
-
+    <script>
+        document.getElementById("btnSubmit").addEventListener("click",getString);
+    </script>
 </body>
 
 </html>

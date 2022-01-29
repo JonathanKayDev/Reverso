@@ -37,7 +37,7 @@
                         <a class="nav-link active" aria-current="page" href="code.html">The Code</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" target="_blank" href="#">Git Repo</a>
+                        <a class="nav-link" target="_blank" href="https://github.com/JonathanKayDev/Reverso">Git Repo</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" target="_blank" href="https://www.jonathankay.dev">About</a>
@@ -48,16 +48,62 @@
     </nav>
     <!-- Main Section-->
     <main class="flex-shrink-0">
-        <div class="container py-5 px-5 mt-5">
+        <div class="container py-5 px-3 mt-5">
             <h2 class="border-1 border-bottom border-dark">The Code for REVERSO</h2>
             <div class="row row-cols-1 row-cols-lg-2">
                 <!-- Prism Code-->
                 <div class="col-lg-8">
                     <pre class="line-numbers">
                         <code class="language-javascript">
-                            // Call Hello World
-                            function HelloWorld() {
-                                alert("Hello World!");
+                            // CONTROLLER FUNCTION(S)
+                            // Get string from the page
+                            function getString() {
+                                let userString = document.getElementById("userString").value;
+                                let revString = reverseString(userString);
+                            
+                                document.getElementById("alert").classList.add("invisible");
+                                // if input string is valid, then display reversed string 
+                                if (validateString(userString)) {
+                                    displayString(revString);
+                                }
+                                
+                            }
+                            
+                            
+                            // LOGIC FUNCTION(S)
+                            // Reverse the string
+                            function reverseString(uString) {
+                                let revString = [];
+                            
+                                // reverse a string using a for loop
+                                for (let index = uString.length - 1; index >= 0; index--) {
+                                    revString += uString[index];
+                                }
+                            
+                                return revString;
+                            }
+                            
+                            function validateString(uString) {
+                                let output = true;
+                            
+                                // check if string is empty or has only white spaces
+                                if (uString.length === 0 || !uString.trim()) {
+                                    alert("Please enter a string for REVERSO!")
+                                    output = false;
+                                }
+                            
+                                return output;
+                            }
+                            
+                            
+                            // VIEW FUNCTION(S)
+                            // Display the reversed string to the user
+                            function displayString(rString) {
+                                // write message to page
+                                document.getElementById("msg").innerHTML = `${rString} !`;
+                            
+                                // show the alert box
+                                document.getElementById("alert").classList.remove("invisible");
                             }
                         </code>
                     </pre>
